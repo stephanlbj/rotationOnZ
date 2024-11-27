@@ -1,0 +1,42 @@
+
+
+  body {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: #f0f0f0;
+  }
+  
+  .main {
+     width: 200px;
+     height: 200px;
+     position: relative;
+     transform: perspective(1000px); 
+     transform-style: preserve-3d;
+     animation: runAuto 10s linear infinite;
+  }
+
+  @keyframes runAuto {
+    0% {
+        transform: rotateX(-20deg)  rotateY(0deg);
+    }
+    100% {
+        transform:  rotateX(-20deg) rotateY(360deg) ;
+    }
+ }
+ 
+  
+  .main .item {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background-color: brown;
+     opacity: 0.9;
+     transform: rotateY(calc((var(--position) + 1) * (360 / 5) * 1deg)) translateZ(200px);
+   
+  }
+  
